@@ -12,14 +12,14 @@ public class HomeConstructionCost {
 		  double areaOfHome;
 		  Scanner sc=new Scanner(System.in);
 		  logger.info("Construction cost of the house");
-		  System.out.format("%s","Enter the area of the house(in feets) : \n");
+		  logger.info("Enter the area of the house(in feets) : \n");
 		  areaOfHome=sc.nextDouble();
 		  
-		  System.out.format("%s","Select the cost of standard material required for the construction of the home per square feet : \n");
-		  System.out.format("%s","1 : 1200INR for standard materials \n");	
-		  System.out.format("%s","2 : 1500INR for above standard materials \n");
-		  System.out.format("%s","3 : 1800INR for high standard materials \n");
-		  System.out.format("%s","4 : 2500INR for high above standard materials and fully automated home \n");
+		  logger.info("Select the cost of standard material required for the construction of the home per square feet : \n");
+		  logger.info("1 : 1200INR for standard materials \n");	
+		  logger.info("2 : 1500INR for above standard materials \n");
+		  logger.info("3 : 1800INR for high standard materials \n");
+		  logger.info("4 : 2500INR for high above standard materials and fully automated home \n");
 		  logger.warn("Select correct choice");
 		  int choice=sc.nextInt();
 		  if(choice>=1 && choice<5){
@@ -31,11 +31,10 @@ public class HomeConstructionCost {
 			      
 			   };
 			   //printing the cost of the home based on the choice chosen by the customers
-			   System.out.format("%s %.2fINR\n","Home construction cost : ",home_Construction_Cost[choice-1]);
+			   logger.info("Home construction cost "+home_Construction_Cost[choice-1]+"rupees");
 		  }
 		  else {
 			  logger.error("Incorrect choice choosen");
-			  System.out.format("Invalid choice \n");
 		  }
 		  
 	   }
