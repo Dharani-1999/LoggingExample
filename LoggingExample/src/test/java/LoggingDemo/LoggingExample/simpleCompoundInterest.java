@@ -15,19 +15,19 @@ public class simpleCompoundInterest {
 		   double compoundInterest;
 		   
 		   Scanner sc=new Scanner(System.in);
-		   System.out.format("%s","Enter principle amount\n");
+		   logger.info("Enter principle amount");
 		   principleAmount=sc.nextInt();
 		   
-		   System.out.format("%s","Enter rate of interest\n");
+		   logger.info("Enter rate of interest");
 		   rateOfInterest=sc.nextInt();
 		   
-		   System.out.format("%s","Enter time\n");
+		   logger.info("Enter time");
 		   time=sc.nextInt();
 		   logger.debug("Simple and compound interest debugger");
 		   try {
 		      simpleInterest=((principleAmount)*(rateOfInterest)*(time))/100;
 		      //printing compound interest
-		      System.out.format(" Simple interest : %.3f\n",simpleInterest);
+		      logger.info("Simple interest :"+simpleInterest);
 		   
 		      rateOfInterest=1+(rateOfInterest/100);
 		      for(int i=1;i<=time;i++){
@@ -37,11 +37,12 @@ public class simpleCompoundInterest {
 		      compoundInterest=amount-principleAmount;
 		   
 		      //printing compound interest
-		      System.out.format(" Compound interest : %.3f\n",compoundInterest);
+		      logger.info("Compound interest:"+compoundInterest);
 		   }
 		   catch(ArithmeticException e){
 			   logger.error("Error occurred while calculating the interest",e);
 			   e.printStackTrace();
+			   logger.info("Interest calculation failed");
 		   }
 		   logger.info("Interest calculated succesfully");
 		   
